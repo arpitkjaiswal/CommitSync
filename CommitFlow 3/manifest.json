@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "CommitFlow",
+  "version": "0.3.1",
+  "description": "Capture Accepted LeetCode submissions and safely commit them to GitHub.",
+  "minimum_chrome_version": "102",
+  "permissions": [
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "CommitFlow"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'none'; connect-src https://api.github.com"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://leetcode.com/*"
+      ],
+      "js": [
+        "leetcode.js",
+        "content.js"
+      ],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "host_permissions": [
+    "https://api.github.com/*"
+  ]
+}

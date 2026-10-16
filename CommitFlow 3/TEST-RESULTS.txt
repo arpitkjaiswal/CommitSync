@@ -1,0 +1,424 @@
+TAP version 13
+# Subtest: content scheduler pauses hidden pages and retries transient/rate-limit failures
+ok 1 - content scheduler pauses hidden pages and retries transient/rate-limit failures
+  ---
+  duration_ms: 6.707922
+  type: 'test'
+  ...
+# Subtest: content scheduler stops on authentication and schema errors instead of retry storms
+ok 2 - content scheduler stops on authentication and schema errors instead of retry storms
+  ---
+  duration_ms: 2.877502
+  type: 'test'
+  ...
+# Subtest: unsaved repository edits cannot trigger a sync to the previously saved target
+ok 3 - unsaved repository edits cannot trigger a sync to the previously saved target
+  ---
+  duration_ms: 4.786483
+  type: 'test'
+  ...
+# Subtest: verified token lives only in session storage and is never returned by status
+ok 4 - verified token lives only in session storage and is never returned by status
+  ---
+  duration_ms: 2.333958
+  type: 'test'
+  ...
+# Subtest: failed verification does not save credentials or repository
+ok 5 - failed verification does not save credentials or repository
+  ---
+  duration_ms: 0.746649
+  type: 'test'
+  ...
+# Subtest: completion ledger survives worker restart and scopes deduplication to repository and branch
+ok 6 - completion ledger survives worker restart and scopes deduplication to repository and branch
+  ---
+  duration_ms: 1.059418
+  type: 'test'
+  ...
+# Subtest: rate-limit cooldown persists across restart and blocks premature retry/verification
+ok 7 - rate-limit cooldown persists across restart and blocks premature retry/verification
+  ---
+  duration_ms: 4.956577
+  type: 'test'
+  ...
+# Subtest: failed local completion write leaves record retryable for remote reconciliation
+ok 8 - failed local completion write leaves record retryable for remote reconciliation
+  ---
+  duration_ms: 1.0944
+  type: 'test'
+  ...
+# Subtest: browser session token loss requires verification before further syncing
+ok 9 - browser session token loss requires verification before further syncing
+  ---
+  duration_ms: 0.411056
+  type: 'test'
+  ...
+# Subtest: failed replacement token write cannot change the saved repository
+ok 10 - failed replacement token write cannot change the saved repository
+  ---
+  duration_ms: 3.601958
+  type: 'test'
+  ...
+# Subtest: partial target save leaves mismatched credential unusable
+ok 11 - partial target save leaves mismatched credential unusable
+  ---
+  duration_ms: 0.448983
+  type: 'test'
+  ...
+# Subtest: stale popup target cannot sync to a newly configured repository
+ok 12 - stale popup target cannot sync to a newly configured repository
+  ---
+  duration_ms: 0.295523
+  type: 'test'
+  ...
+# Subtest: stable path and exact UTF-8 Git blob hash
+ok 13 - stable path and exact UTF-8 Git blob hash
+  ---
+  duration_ms: 10.471431
+  type: 'test'
+  ...
+# Subtest: successful commit preserves base tree, uses one parent and never force-pushes
+ok 14 - successful commit preserves base tree, uses one parent and never force-pushes
+  ---
+  duration_ms: 10.178002
+  type: 'test'
+  ...
+# Subtest: existing identical file skips tree/commit/ref writes
+ok 15 - existing identical file skips tree/commit/ref writes
+  ---
+  duration_ms: 2.920286
+  type: 'test'
+  ...
+# Subtest: existing different content or symlink is never overwritten
+ok 16 - existing different content or symlink is never overwritten
+  ---
+  duration_ms: 3.285954
+  type: 'test'
+  ...
+# Subtest: user push permission is insufficient: read-only token fails actual write probe
+ok 17 - user push permission is insufficient: read-only token fails actual write probe
+  ---
+  duration_ms: 0.490895
+  type: 'test'
+  ...
+# Subtest: empty repositories and missing branches fail safely before writes
+ok 18 - empty repositories and missing branches fail safely before writes
+  ---
+  duration_ms: 2.444793
+  type: 'test'
+  ...
+# Subtest: concurrent advance is detected before ref update
+ok 19 - concurrent advance is detected before ref update
+  ---
+  duration_ms: 6.674512
+  type: 'test'
+  ...
+# Subtest: fast-forward rejection is reconciled without force or automatic overwrite
+ok 20 - fast-forward rejection is reconciled without force or automatic overwrite
+  ---
+  duration_ms: 1.780308
+  type: 'test'
+  ...
+# Subtest: lost successful PATCH response reconciles and replay is duplicate
+ok 21 - lost successful PATCH response reconciles and replay is duplicate
+  ---
+  duration_ms: 3.287516
+  type: 'test'
+  ...
+# Subtest: transient read failure retries with bounded backoff
+ok 22 - transient read failure retries with bounded backoff
+  ---
+  duration_ms: 1.58885
+  type: 'test'
+  ...
+# Subtest: rate limits return retry time; authentication and permissions do not retry
+ok 23 - rate limits return retry time; authentication and permissions do not retry
+  ---
+  duration_ms: 1.315902
+  type: 'test'
+  ...
+# Subtest: truncated Git trees stop sync rather than assume file absence
+ok 24 - truncated Git trees stop sync rather than assume file absence
+  ---
+  duration_ms: 0.942363
+  type: 'test'
+  ...
+# Subtest: partial tree creation failure never changes branch and replay succeeds
+ok 25 - partial tree creation failure never changes branch and replay succeeds
+  ---
+  duration_ms: 1.936923
+  type: 'test'
+  ...
+# Subtest: E2E delayed judging → duplicate tab events → concurrent sync → restart: one commit, preserved files, no leaked token
+ok 26 - E2E delayed judging → duplicate tab events → concurrent sync → restart: one commit, preserved files, no leaked token
+  ---
+  duration_ms: 42.655599
+  type: 'test'
+  ...
+# Subtest: E2E rejected submissions never reach storage or GitHub
+ok 27 - E2E rejected submissions never reach storage or GitHub
+  ---
+  duration_ms: 5.624669
+  type: 'test'
+  ...
+# Subtest: E2E expired LeetCode session stops polling without capture
+ok 28 - E2E expired LeetCode session stops polling without capture
+  ---
+  duration_ms: 2.29566
+  type: 'test'
+  ...
+# Subtest: E2E network failure backs off, delayed judging resumes and upload retries
+ok 29 - E2E network failure backs off, delayed judging resumes and upload retries
+  ---
+  duration_ms: 5.969075
+  type: 'test'
+  ...
+# Subtest: E2E GitHub 401 is safe and retryable after correction
+ok 30 - E2E GitHub 401 is safe and retryable after correction
+  ---
+  duration_ms: 4.959862
+  type: 'test'
+  ...
+# Subtest: E2E GitHub 403 is safe and retryable after correction
+ok 31 - E2E GitHub 403 is safe and retryable after correction
+  ---
+  duration_ms: 5.225671
+  type: 'test'
+  ...
+# Subtest: E2E GitHub 409 is safe and retryable after correction
+ok 32 - E2E GitHub 409 is safe and retryable after correction
+  ---
+  duration_ms: 5.773561
+  type: 'test'
+  ...
+# Subtest: E2E GitHub 422 is safe and retryable after correction
+ok 33 - E2E GitHub 422 is safe and retryable after correction
+  ---
+  duration_ms: 5.033122
+  type: 'test'
+  ...
+# Subtest: E2E GitHub 429 is safe and retryable after correction
+ok 34 - E2E GitHub 429 is safe and retryable after correction
+  ---
+  duration_ms: 5.60545
+  type: 'test'
+  ...
+# Subtest: E2E lost successful PATCH response and lost local ledger survive worker restart without duplicate commits
+ok 35 - E2E lost successful PATCH response and lost local ledger survive worker restart without duplicate commits
+  ---
+  duration_ms: 6.780911
+  type: 'test'
+  ...
+# Subtest: E2E initialization race queues requests until both storage restrictions finish
+ok 36 - E2E initialization race queues requests until both storage restrictions finish
+  ---
+  duration_ms: 3.062589
+  type: 'test'
+  ...
+# Subtest: E2E synchronous storage-isolation exception must fail closed
+ok 37 - E2E synchronous storage-isolation exception must fail closed
+  ---
+  duration_ms: 1.849271
+  type: 'test'
+  ...
+# Subtest: E2E protected-branch 403 does not update ref or force-push
+ok 38 - E2E protected-branch 403 does not update ref or force-push
+  ---
+  duration_ms: 6.689625
+  type: 'test'
+  ...
+# Subtest: E2E expired LeetCode 403 stops before any GitHub operation
+ok 39 - E2E expired LeetCode 403 stops before any GitHub operation
+  ---
+  duration_ms: 2.02156
+  type: 'test'
+  ...
+# Subtest: problem URL parsing restricts exact HTTPS origin and supports SPA paths
+ok 40 - problem URL parsing restricts exact HTTPS origin and supports SPA paths
+  ---
+  duration_ms: 1.538926
+  type: 'test'
+  ...
+# Subtest: GraphQL requests use same-origin cookies and CSRF, and retrieve exact Accepted fields
+ok 41 - GraphQL requests use same-origin cookies and CSRF, and retrieve exact Accepted fields
+  ---
+  duration_ms: 1.64813
+  type: 'test'
+  ...
+# Subtest: list validates account, IDs, pending flag and timestamp
+ok 42 - list validates account, IDs, pending flag and timestamp
+  ---
+  duration_ms: 1.342231
+  type: 'test'
+  ...
+# Subtest: pending/null details wait; all known rejected verdicts emit no record
+ok 43 - pending/null details wait; all known rejected verdicts emit no record
+  ---
+  duration_ms: 0.714161
+  type: 'test'
+  ...
+# Subtest: unknown verdict, wrong slug and missing Accepted metadata fail closed
+ok 44 - unknown verdict, wrong slug and missing Accepted metadata fail closed
+  ---
+  duration_ms: 1.031205
+  type: 'test'
+  ...
+# Subtest: HTTP 401 has classified error
+ok 45 - HTTP 401 has classified error
+  ---
+  duration_ms: 0.347371
+  type: 'test'
+  ...
+# Subtest: HTTP 403 has classified error
+ok 46 - HTTP 403 has classified error
+  ---
+  duration_ms: 0.268963
+  type: 'test'
+  ...
+# Subtest: HTTP 429 has classified error
+ok 47 - HTTP 429 has classified error
+  ---
+  duration_ms: 0.116114
+  type: 'test'
+  ...
+# Subtest: HTTP 500 has classified error
+ok 48 - HTTP 500 has classified error
+  ---
+  duration_ms: 0.122954
+  type: 'test'
+  ...
+# Subtest: network failure, HTML challenge and GraphQL schema/auth errors are classified
+ok 49 - network failure, HTML challenge and GraphQL schema/auth errors are classified
+  ---
+  duration_ms: 3.189114
+  type: 'test'
+  ...
+# Subtest: hung request is aborted by timeout
+ok 50 - hung request is aborted by timeout
+  ---
+  duration_ms: 5.966701
+  type: 'test'
+  ...
+# Subtest: ignores historical completed submissions; waits for delayed judging; emits only once
+ok 51 - ignores historical completed submissions; waits for delayed judging; emits only once
+  ---
+  duration_ms: 0.563484
+  type: 'test'
+  ...
+# Subtest: new rejected submissions never reach emit
+ok 52 - new rejected submissions never reach emit
+  ---
+  duration_ms: 0.12012
+  type: 'test'
+  ...
+# Subtest: failed delivery retries instead of dropping Accepted event
+ok 53 - failed delivery retries instead of dropping Accepted event
+  ---
+  duration_ms: 0.575512
+  type: 'test'
+  ...
+# Subtest: pending retrieval expires and account change discards old pending work
+ok 54 - pending retrieval expires and account change discards old pending work
+  ---
+  duration_ms: 0.18021
+  type: 'test'
+  ...
+# Subtest: overlapping polling ticks do not start concurrent requests
+ok 55 - overlapping polling ticks do not start concurrent requests
+  ---
+  duration_ms: 0.173671
+  type: 'test'
+  ...
+# Subtest: worker validates exact origin, tab and frame; no popup access for content sender
+ok 56 - worker validates exact origin, tab and frame; no popup access for content sender
+  ---
+  duration_ms: 0.22012
+  type: 'test'
+  ...
+# Subtest: persistent deduplication survives store reuse; failed writes can be retried
+ok 57 - persistent deduplication survives store reuse; failed writes can be retried
+  ---
+  duration_ms: 0.420059
+  type: 'test'
+  ...
+# Subtest: popup loads, saves, reports failure and recovers through reset
+ok 58 - popup loads, saves, reports failure and recovers through reset
+  ---
+  duration_ms: 5.797368
+  type: 'test'
+  ...
+# Subtest: missing settings use defaults; save normalizes; reset preserves unrelated data
+ok 59 - missing settings use defaults; save normalizes; reset preserves unrelated data
+  ---
+  duration_ms: 2.162751
+  type: 'test'
+  ...
+# Subtest: invalid configurations are rejected without writes
+ok 60 - invalid configurations are rejected without writes
+  ---
+  duration_ms: 0.851105
+  type: 'test'
+  ...
+# Subtest: corrupt stored configuration is reported and can be reset
+ok 61 - corrupt stored configuration is reported and can be reset
+  ---
+  duration_ms: 0.31372
+  type: 'test'
+  ...
+# Subtest: worker registers synchronously and keeps async response channel open
+ok 62 - worker registers synchronously and keeps async response channel open
+  ---
+  duration_ms: 3.798492
+  type: 'test'
+  ...
+# Subtest: worker messages persist across worker restarts and reset
+ok 63 - worker messages persist across worker restarts and reset
+  ---
+  duration_ms: 2.163883
+  type: 'test'
+  ...
+# Subtest: worker rejects untrusted senders, malformed payloads and unknown requests
+ok 64 - worker rejects untrusted senders, malformed payloads and unknown requests
+  ---
+  duration_ms: 1.066027
+  type: 'test'
+  ...
+# Subtest: storage failures reach caller and do not poison the queue
+ok 65 - storage failures reach caller and do not poison the queue
+  ---
+  duration_ms: 1.192417
+  type: 'test'
+  ...
+# Subtest: concurrent set and reset are processed in order
+ok 66 - concurrent set and reset are processed in order
+  ---
+  duration_ms: 2.258444
+  type: 'test'
+  ...
+# Subtest: manifest exposes only storage and packaged scripts
+ok 67 - manifest exposes only storage and packaged scripts
+  ---
+  duration_ms: 1.142693
+  type: 'test'
+  ...
+# Subtest: actual worker routes Accepted events, deduplicates across restart and denies content configuration access
+ok 68 - actual worker routes Accepted events, deduplicates across restart and denies content configuration access
+  ---
+  duration_ms: 2.480677
+  type: 'test'
+  ...
+# Subtest: storage isolation failure blocks credential operations and malformed messages receive errors
+ok 69 - storage isolation failure blocks credential operations and malformed messages receive errors
+  ---
+  duration_ms: 0.71374
+  type: 'test'
+  ...
+1..69
+# tests 69
+# suites 0
+# pass 69
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 241.218396

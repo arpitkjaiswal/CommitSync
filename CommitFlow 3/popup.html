@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CommitFlow</title>
+  <link rel="stylesheet" href="popup.css">
+  <script type="module" src="popup.js"></script>
+  <script type="module" src="github-popup.js"></script>
+</head>
+<body>
+  <main>
+    <header><div class="mark" aria-hidden="true">CF</div><div><h1>CommitFlow</h1><p>Your workflow, taking shape.</p></div></header>
+    <div class="phase">PHASE 03 <span>GitHub sync</span></div>
+    <section class="intro"><h2>Capture your progress.</h2><p>New Accepted LeetCode submissions are captured locally while a problem page is open.</p></section>
+    <form id="settings">
+      <fieldset id="fields" disabled>
+        <legend>Preferences</legend>
+        <label for="display-name">Display name <span class="optional">optional</span></label>
+        <input id="display-name" name="displayName" maxlength="60" autocomplete="off" placeholder="What should we call you?">
+        <label for="theme">Appearance</label>
+        <select id="theme" name="theme"><option value="system">Follow system</option><option value="light">Light</option><option value="dark">Dark</option></select>
+        <button type="submit" class="primary">Save preferences</button>
+      </fieldset>
+    </form>
+    <div class="actions"><button id="reset" type="button" disabled>Reset preferences</button><button id="check" type="button">Check connection</button></div>
+    <p id="status" role="status" aria-live="polite" aria-atomic="true">Loading preferences…</p>
+    <form id="github-settings">
+      <fieldset id="github-fields" disabled>
+        <legend>GitHub repository</legend>
+        <label for="github-owner">Owner</label><input id="github-owner" required maxlength="39" autocomplete="off">
+        <label for="github-repo">Repository</label><input id="github-repo" required maxlength="100" autocomplete="off">
+        <label for="github-branch">Branch</label><input id="github-branch" required maxlength="200" value="main" autocomplete="off">
+        <label for="github-token">Fine-grained personal access token</label>
+        <input id="github-token" type="password" autocomplete="off" spellcheck="false" placeholder="github_pat_…" maxlength="256">
+        <p class="token-note">Contents: read/write on this repository only. Token stays in browser-session memory; re-enter it after restarting Chrome. Verification creates an unattached Git blob, not a commit.</p>
+        <button class="primary" type="submit">Verify &amp; save repository</button>
+        <div class="actions"><button id="github-sync" type="button">Sync next submission</button><button id="github-disconnect" type="button">Disconnect</button></div>
+      </fieldset>
+    </form>
+    <p id="github-status" role="status" aria-live="polite">Loading GitHub settings…</p>
+    <footer>Sync is manual · Existing repository files are preserved</footer>
+  </main>
+</body>
+</html>
